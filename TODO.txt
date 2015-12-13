@@ -1,0 +1,6 @@
+- Add a volumed Dockerfile for v3.6.0
+- Create a wrapper script for the volumed Dockerfiles that recreates the
+  contents of VARDIR if it's empty
+- Create a v3.6.0 Dockerfile that uses sysconf
+- Add to Docker Hub
+- Write a README
