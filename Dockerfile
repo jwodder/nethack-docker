@@ -1,5 +1,3 @@
-# cf. <https://registry.hub.docker.com/u/matsuu/nethack/dockerfile/>
-
 FROM debian:jessie
 RUN apt-get update && apt-get install -y --no-install-recommends \
 			bison \
