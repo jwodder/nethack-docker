@@ -10,4 +10,3 @@
 - Look into the necessity of making NetHack setuid
 - Look into the necessity of enforcing user & group ownership (and permission
   bits?) on the contents of /data
-- Delete the non-volumed Dockerfiles?
