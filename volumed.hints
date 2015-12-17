@@ -14,10 +14,8 @@ WINOBJ    = $(WINTTYOBJ)
 WINLIB    = $(WINTTYLIB)
 WINTTYLIB = -lncurses
 
-CHOWN       = chown
-CHGRP       = chgrp
-GAMEUID     = games
-GAMEGRP     = bin
-GAMEPERM    = 04755
+CHOWN       = true
+CHGRP       = true
+GAMEPERM    = 0755
 VARFILEPERM = 0644
 VARDIRPERM  = 0755

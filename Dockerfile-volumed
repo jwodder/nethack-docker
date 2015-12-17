@@ -31,9 +31,5 @@ COPY nethack.sh /usr/games/nethack
 ENV PATH       $PATH:/usr/games
 ENV HACKPAGER  /usr/bin/less
 
-#RUN useradd -d /home/wizard -m -U -s /bin/bash wizard
-#USER wizard
-#USER games
-
 VOLUME ["/data"]
 CMD ["/usr/games/nethack"]

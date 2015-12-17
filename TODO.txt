@@ -5,10 +5,9 @@
  - Topics to cover:
   - Setting your username via $USER
   - Using a .nethackrc file
+  - Suggestions for volume management?
 - Should the Dockerfile set TERM?
 - Look into the necessity of making NetHack setuid
 - Look into the necessity of enforcing user & group ownership (and permission
   bits?) on the contents of /data
-- For the volumed versions: Mess around with various combinations of USER,
-  GAMEUID, and HOME
 - Delete the non-volumed Dockerfiles?

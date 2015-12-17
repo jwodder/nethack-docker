@@ -14,12 +14,8 @@ VARDIR=/data
 # In case the user has mounted an empty directory into /data, ensure the
 # necessary files & directory exist so NetHack won't die:
 cd $VARDIR
-mkdir save
+mkdir -p save
 touch perm record logfile xlogfile
-chown -R games .
-chgrp -R bin .
-chmod 0755 . save
-chmod 0644 perm record logfile xlogfile
 
 cd $HACKDIR
 case $1 in
