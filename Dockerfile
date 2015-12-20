@@ -15,6 +15,8 @@ RUN wget -O - http://sourceforge.net/projects/nethack/files/nethack/3.4.3/nethac
 	tar zxv -C /tmp && \
 	cd /tmp/nethack-3.4.3 && \
 	sh sys/unix/setup.sh && \
+	sed -i -e 's/^# *define WIZARD \+"wizard"/#define WIZARD "root"/' \
+	       include/config.h && \
 	sed -i -e 's:/\* \(#define LINUX\) \*/:\1:' \
 	       -e 's:/\* \(#define VAR_PLAYGROUND\) "[^"]\+" \*/:\1 "/data":' \
 	       -e 's:/\* \(#define NO_FILE_LINKS\) \*/:\1:' \
