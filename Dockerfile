@@ -17,6 +17,8 @@ RUN wget -O - http://sourceforge.net/projects/nethack/files/nethack/3.4.3/nethac
 	sh sys/unix/setup.sh && \
 	sed -i -e 's:/\* \(#define LINUX\) \*/:\1:' \
 	       -e 's:/\* \(#define VAR_PLAYGROUND\) "[^"]\+" \*/:\1 "/data":' \
+	       -e 's:/\* \(#define NO_FILE_LINKS\) \*/:\1:' \
+	       -e 's:/\* \(#define LOCKDIR "[^"]\+"\) \*/:\1:' \
 	       include/unixconf.h && \
 	sed -i -e '/^WINTTYLIB/s/=.*/= -lncurses/' src/Makefile && \
 	sed -i -e '/^MANDIR/s:=.*:= /usr/share/man/man6:' doc/Makefile && \
