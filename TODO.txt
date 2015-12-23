@@ -1,8 +1,5 @@
-- Add the 3.6.0 volumed wrapper script to the 3.4.3 volumed image
 - Create a v3.6.0 Dockerfile that uses sysconf
 - Add to Docker Hub
-- Write a README
- - Topics to cover:
-  - Setting your username via $USER
-  - Using a .nethackrc file
-  - Suggestions for volume management?
+- Add `RUN useradd wizard` to the Dockerfiles and require the user to do
+  `docker run -u wizard nethack nethack -D` for wizard mode?  (This might mean
+  setting the setuid flag again)
