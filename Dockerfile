@@ -11,7 +11,7 @@ RUN apt-get update && apt-get install -o APT::Install-Recommends=0 \
 			ncurses-dev \
 			wget
 
-COPY docker.hints /tmp
+COPY docker.hints /tmp/docker.hints
 
 RUN wget -O - http://downloads.sourceforge.net/project/nethack/nethack/3.6.0/nethack-360-src.tgz | \
 	tar zxv -C /tmp && \
