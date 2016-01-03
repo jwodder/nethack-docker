@@ -7,8 +7,6 @@
 HACKDIR=/usr/games/lib/nethackdir
 export HACKDIR
 HACK=$HACKDIR/nethack
-# NB: MAXNROFPLAYERS is deprecated in favor of MAXPLAYERS in SYSCF.
-MAXNROFPLAYERS=4
 VARDIR=/data
 
 # In case the user has mounted an empty directory into /data, ensure the
@@ -18,11 +16,4 @@ mkdir -p save
 touch perm record logfile xlogfile sysconf
 
 cd $HACKDIR
-case $1 in
-	-s*)
-		exec $HACK "$@"
-		;;
-	*)
-		exec $HACK "$@" $MAXNROFPLAYERS
-		;;
-esac
+exec $HACK "$@"
