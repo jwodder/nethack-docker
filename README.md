@@ -1,24 +1,12 @@
-[NetHack](http://www.nethack.org) is a
-[roguelike](https://en.wikipedia.org/wiki/Roguelike) computer game in which a
-brave young `@` goes forth to acquire the Amulet of Yendor and dies horribly
-every(?) single time.  It also has [a wiki](https://nethackwiki.com).
+[NetHack](http://www.nethack.org) is a [roguelike](https://en.wikipedia.org/wiki/Roguelike) computer game in which a brave young `@` goes forth to acquire the Amulet of Yendor and dies horribly every(?) single time.  It also has [a wiki](https://nethackwiki.com).
 
-This repository contains Docker images for the latest versions of the game,
-built with the basic out-of-the-box configurations (so tty graphics only, no
-autopickup exceptions in 3.4.3, and no status hilites in 3.6.0), with the
-following exceptions:
+This repository contains Docker images for the latest versions of the game, built with the basic out-of-the-box configurations (so tty graphics only, no autopickup exceptions in 3.4.3, and no status hilites in 3.6.0), with the following exceptions:
 
-- Mutable game data (high scores, save files, etc.) is stored in the `/data`
-  volume separately from the static data so that the former can be preserved
-  across containers.
+- Mutable game data (high scores, save files, etc.) is stored in the `/data` volume separately from the static data so that the former can be preserved across containers.
 
-- `root` (the user the image runs as) can enter debug/wizard mode without
-  having to switch to a different \*nix account.
+- `root` (the user the image runs as) can enter debug/wizard mode without having to switch to a different \*nix account.
 
-- Support for the new sysconf mechanism in 3.6.0 is only enabled in the
-  `3.6.0-sysconf` image.  This feature allows certain game parameters to be
-  configured via the `/data/sysconf` file.  See `sys/unix/sysconf` in the
-  NetHack 3.6.0 source distribution for more information.
+- Support for the new sysconf mechanism in 3.6.0 is only enabled in the `3.6.0-sysconf` image.  This feature allows certain game parameters to be configured via the `/data/sysconf` file.  See `sys/unix/sysconf` in the NetHack 3.6.0 source distribution for more information.
 
 Tags and Dockerfiles
 --------------------
@@ -28,20 +16,17 @@ Tags and Dockerfiles
 
 Setting Options
 ---------------
-You can set NetHack options by specifying them directly in the environment
-variable `NETHACKOPTIONS`:
+You can set NetHack options by specifying them directly in the environment variable `NETHACKOPTIONS`:
 
     docker run -it -e NETHACKOPTIONS="name:Rodney,disclose:+i +a +v +g +c +o" jwodder/nethack:3.6.0
 
-or put the options in a `.nethackrc` file in your `/data` volume and set
-`NETHACKOPTIONS` to `"@<PATH TO FILE>"`:
+or put the options in a `.nethackrc` file in your `/data` volume and set `NETHACKOPTIONS` to `"@<PATH TO FILE>"`:
 
     echo 'OPTIONS=name:Rodney,disclose:+i +a +v +g +c +o' > /path/to/my/nethack/data/.nethackrc
 
     docker run -it -v /path/to/my/nethack/data:/data -e NETHACKOPTIONS="@/data/.nethackrc" jwodder/nethack:3.6.0
 
-or add the `.nethackrc` directly to root's home directory in a derived image
-and run that:
+or add the `.nethackrc` directly to root's home directory in a derived image and run that:
 
     # Dockerfile:
     FROM jwodder/nethack:3.6.0
@@ -51,8 +36,7 @@ and run that:
     docker build -t my_derived_nethack .
     docker run -it my_derived_nethack
 
-If using the `3.6.0-sysconf` image, the default option values can be set by
-placing them in `/data/sysconf`:
+If using the `3.6.0-sysconf` image, the default option values can be set by placing them in `/data/sysconf`:
 
     echo 'OPTIONS=name:Rodney,disclose:+i +a +v +g +c +o' >> /path/to/my/nethack/data/sysconf
 
