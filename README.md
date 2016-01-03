@@ -8,16 +8,22 @@ built with the basic out-of-the-box configurations (so tty graphics only, no
 autopickup exceptions in 3.4.3, and no status hilites in 3.6.0), with the
 following exceptions:
 
+- Mutable game data (high scores, save files, etc.) is stored in the `/data`
+  volume separately from the static data so that the former can be preserved
+  across containers.
+
 - `root` (the user the image runs as) can enter debug/wizard mode without
   having to switch to a different \*nix account.
 
-- Mutable game data (high scores, save files, etc.) is stored in the `/data`
-  directory separately from the static data so that the former can be saved in
-  a Docker volume and preserved across containers.
+- Support for the new sysconf mechanism in 3.6.0 is only enabled in the
+  `3.6.0-sysconf` image.  This feature allows certain game parameters to be
+  configured via the `/data/sysconf` file.  See `sys/unix/sysconf` in the
+  NetHack 3.6.0 source distribution for more information.
 
 Tags and Dockerfiles
 --------------------
 * [`3.6.0`, `latest`](https://github.com/jwodder/nethack-docker/blob/master/Dockerfile)
+* [`3.6.0-sysconf`](https://github.com/jwodder/nethack-docker/blob/3.6.0-sysconf/Dockerfile)
 * [`3.4.3`](https://github.com/jwodder/nethack-docker/blob/3.4.3/Dockerfile)
 
 Setting Options
@@ -45,5 +51,9 @@ and run that:
     docker build -t my_derived_nethack .
     docker run -it my_derived_nethack
 
-<!-- NetHack options will also be settable in the sysconf file, once support
-for that is added. -->
+If using the `3.6.0-sysconf` image, the default option values can be set by
+placing them in `/data/sysconf`:
+
+    echo 'OPTIONS=name:Rodney,disclose:+i +a +v +g +c +o' >> /path/to/my/nethack/data/sysconf
+
+    docker run -it -v /path/to/my/nethack/data:/data jwodder/nethack:3.6.0-sysconf
