@@ -18,7 +18,6 @@ RUN wget -O - http://downloads.sourceforge.net/project/nethack/nethack/3.6.0/net
 	cd /tmp/nethack-3.6.0 && \
 	mv -i /tmp/docker.hints . && \
 	sh sys/unix/setup.sh docker.hints && \
-	sed -i -e 's:\(#define SYSCF\>\):/* \1 */:' include/config.h && \
 	sed -i -e '/^MANDIR/s:=.*:= /usr/share/man/man6:' doc/Makefile && \
 	mkdir -p /usr/share/man/man6 && \
 	make all && \

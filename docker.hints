@@ -6,8 +6,10 @@ VARDIR=$(HACKDIR)
 SHELLDIR=$(PREFIX)/games
 VARDIR=/data
 
-CFLAGS=-O -I../include -DLINUX -DVAR_PLAYGROUND=\"/data\" -DWIZARD_NAME=\"*\"
+CFLAGS=-O -I../include -DLINUX -DVAR_PLAYGROUND=\"/data\" -DSYSCF -DSYSCF_FILE=\"/data/sysconf\"
 LINK=$(CC)
+
+POSTINSTALL=cp -n sys/unix/sysconf $(VARDIR)/sysconf; chmod $(VARFILEPERM) $(VARDIR)/sysconf;
 
 WINSRC    = $(WINTTYSRC)
 WINOBJ    = $(WINTTYOBJ)

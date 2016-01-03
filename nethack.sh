@@ -15,7 +15,7 @@ VARDIR=/data
 # necessary files & directory exist so NetHack won't die:
 cd $VARDIR
 mkdir -p save
-touch perm record logfile xlogfile
+touch perm record logfile xlogfile sysconf
 
 cd $HACKDIR
 case $1 in
