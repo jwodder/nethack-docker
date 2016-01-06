@@ -10,9 +10,9 @@ This repository contains Docker images for the latest versions of the game, buil
 
 Tags and Dockerfiles
 --------------------
-* [`3.6.0`, `latest`](https://github.com/jwodder/nethack-docker/blob/master/Dockerfile)
-* [`3.6.0-sysconf`](https://github.com/jwodder/nethack-docker/blob/3.6.0-sysconf/Dockerfile)
-* [`3.4.3`](https://github.com/jwodder/nethack-docker/blob/3.4.3/Dockerfile)
+* [`3.6.0`, `latest`](https://github.com/jwodder/nethack-docker/blob/master/3.6.0/Dockerfile)
+* [`3.6.0-sysconf`](https://github.com/jwodder/nethack-docker/blob/master/3.6.0-sysconf/Dockerfile)
+* [`3.4.3`](https://github.com/jwodder/nethack-docker/blob/master/3.4.3/Dockerfile)
 
 Setting Options
 ---------------
