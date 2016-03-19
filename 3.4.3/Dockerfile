@@ -11,7 +11,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 			wget && \
 	apt-get clean && rm -rf /var/lib/apt/lists/*
 
-RUN wget -O - http://sourceforge.net/projects/nethack/files/nethack/3.4.3/nethack-343-src.tgz | \
+RUN wget -O - http://downloads.sourceforge.net/project/nethack/nethack/3.4.3/nethack-343-src.tgz | \
 	tar zxv -C /tmp && \
 	cd /tmp/nethack-3.4.3 && \
 	sh sys/unix/setup.sh && \
