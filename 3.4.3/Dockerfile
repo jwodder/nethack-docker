@@ -1,6 +1,5 @@
 FROM debian:jessie
-RUN apt-get update && apt-get install -o APT::Install-Recommends=0 \
-				      -o APT::Install-Suggests=0 -y \
+RUN apt-get update && apt-get install -y --no-install-recommends \
 			bison \
 			flex \
 			gcc \
@@ -9,7 +8,8 @@ RUN apt-get update && apt-get install -o APT::Install-Recommends=0 \
 			man \
 			ncompress \
 			ncurses-dev \
-			wget
+			wget && \
+	apt-get clean && rm -rf /var/lib/apt/lists/*
 
 RUN wget -O - http://sourceforge.net/projects/nethack/files/nethack/3.4.3/nethack-343-src.tgz | \
 	tar zxv -C /tmp && \
