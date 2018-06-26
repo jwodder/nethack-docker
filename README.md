@@ -6,11 +6,13 @@ This repository contains Docker images for the latest versions of the game, buil
 
 - `root` (the user the image runs as) can enter debug/wizard mode without having to switch to a different \*nix account.
 
-- Support for the new sysconf mechanism in 3.6.0 is only enabled in the `3.6.0-sysconf` image.  This feature allows certain game parameters to be configured via the `/data/sysconf` file.  See `sys/unix/sysconf` in the NetHack 3.6.0 source distribution for more information.
+- Support for the new sysconf mechanism in 3.6 is only enabled in the `3.6.0-sysconf` and `3.6.1-sysconf` images.  This feature allows certain game parameters to be configured via the `/data/sysconf` file.  See `sys/unix/sysconf` in the NetHack 3.6.0 source distribution for more information.
 
 Tags and Dockerfiles
 --------------------
-* [`3.6.0`, `latest`](https://github.com/jwodder/nethack-docker/blob/master/3.6.0/Dockerfile)
+* [`3.6.1`, `latest`](https://github.com/jwodder/nethack-docker/blob/master/3.6.1/Dockerfile)
+* [`3.6.1-sysconf`](https://github.com/jwodder/nethack-docker/blob/master/3.6.1-sysconf/Dockerfile)
+* [`3.6.0`](https://github.com/jwodder/nethack-docker/blob/master/3.6.0/Dockerfile)
 * [`3.6.0-sysconf`](https://github.com/jwodder/nethack-docker/blob/master/3.6.0-sysconf/Dockerfile)
 * [`3.4.3`](https://github.com/jwodder/nethack-docker/blob/master/3.4.3/Dockerfile)
 
@@ -36,7 +38,7 @@ or add the `.nethackrc` directly to root's home directory in a derived image and
     docker build -t my_derived_nethack .
     docker run -it my_derived_nethack
 
-If using the `3.6.0-sysconf` image, the default option values can be set by placing them in `/data/sysconf`:
+If using the `3.6.0-sysconf` or `3.6.1-sysconf` image, the default option values can be set by placing them in `/data/sysconf`:
 
     echo 'OPTIONS=name:Rodney,disclose:+i +a +v +g +c +o' >> /path/to/my/nethack/data/sysconf
 
