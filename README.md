@@ -12,7 +12,7 @@ Tags and Dockerfiles
 --------------------
 * [`3.6.2`, `latest`](https://github.com/jwodder/nethack-docker/blob/master/3.6.2/Dockerfile)
 * [`3.6.2-sysconf`](https://github.com/jwodder/nethack-docker/blob/master/3.6.2-sysconf/Dockerfile)
-* [`3.6.1`, `latest`](https://github.com/jwodder/nethack-docker/blob/master/3.6.1/Dockerfile)
+* [`3.6.1`](https://github.com/jwodder/nethack-docker/blob/master/3.6.1/Dockerfile)
 * [`3.6.1-sysconf`](https://github.com/jwodder/nethack-docker/blob/master/3.6.1-sysconf/Dockerfile)
 * [`3.6.0`](https://github.com/jwodder/nethack-docker/blob/master/3.6.0/Dockerfile)
 * [`3.6.0-sysconf`](https://github.com/jwodder/nethack-docker/blob/master/3.6.0-sysconf/Dockerfile)
