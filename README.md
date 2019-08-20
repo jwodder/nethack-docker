@@ -6,7 +6,7 @@ This repository contains Docker images for the latest versions of the game, buil
 
 - `root` (the user the image runs as) can enter debug/wizard mode without having to switch to a different \*nix account.
 
-- Support for the new sysconf mechanism in 3.6 is only enabled in the `3.6.0-sysconf` and `3.6.1-sysconf` images.  This feature allows certain game parameters to be configured via the `/data/sysconf` file.  See `sys/unix/sysconf` in the NetHack 3.6.0 source distribution for more information.
+- Support for the new sysconf mechanism in 3.6 is only enabled in the `3.6.*-sysconf` images.  This feature allows certain game parameters to be configured via the `/data/sysconf` file.  See `sys/unix/sysconf` in the NetHack 3.6.\* source distribution for more information.
 
 Tags and Dockerfiles
 --------------------
@@ -38,7 +38,7 @@ or add the `.nethackrc` directly to root's home directory in a derived image and
     docker build -t my_derived_nethack .
     docker run -it my_derived_nethack
 
-If using the `3.6.0-sysconf` or `3.6.1-sysconf` image, the default option values can be set by placing them in `/data/sysconf`:
+If using a `3.6.*-sysconf` image, the default option values can be set by placing them in `/data/sysconf`:
 
     echo 'OPTIONS=name:Rodney,disclose:+i +a +v +g +c +o' >> /path/to/my/nethack/data/sysconf
 

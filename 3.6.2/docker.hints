@@ -1,0 +1,20 @@
+#-PRE
+PREFIX=/usr
+HACKDIR=$(PREFIX)/games/lib/$(GAME)dir
+INSTDIR=$(HACKDIR)
+SHELLDIR=$(PREFIX)/games
+VARDIR=/data
+
+CFLAGS=-O -I../include -DLINUX -DVAR_PLAYGROUND=\"/data\" -DWIZARD_NAME=\"*\"
+LINK=$(CC)
+
+WINSRC    = $(WINTTYSRC)
+WINOBJ    = $(WINTTYOBJ)
+WINLIB    = $(WINTTYLIB)
+WINTTYLIB = -lncurses
+
+CHOWN       = true
+CHGRP       = true
+GAMEPERM    = 0755
+VARFILEPERM = 0644
+VARDIRPERM  = 0755
