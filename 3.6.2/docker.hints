@@ -5,7 +5,7 @@ INSTDIR=$(HACKDIR)
 SHELLDIR=$(PREFIX)/games
 VARDIR=/data
 
-CFLAGS=-O -I../include -DLINUX -DVAR_PLAYGROUND=\"/data\" -DWIZARD_NAME=\"*\"
+CFLAGS=-O -I../include -DVAR_PLAYGROUND=\"/data\" -DWIZARD_NAME=\"*\"
 LINK=$(CC)
 
 WINSRC    = $(WINTTYSRC)
