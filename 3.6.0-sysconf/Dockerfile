@@ -14,7 +14,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 
 COPY docker.hints /tmp/docker.hints
 
-RUN wget -O - http://downloads.sourceforge.net/project/nethack/nethack/3.6.0/nethack-360-src.tgz | \
+RUN wget -O - https://www.nethack.org/download/3.6.0/nethack-360-src.tgz | \
         tar zxv -C /tmp && \
         cd /tmp/nethack-3.6.0 && \
         mv -i /tmp/docker.hints . && \
