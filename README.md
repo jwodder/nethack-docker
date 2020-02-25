@@ -10,8 +10,8 @@ This repository contains Docker images for the latest versions of the game, buil
 
 Tags and Dockerfiles
 --------------------
-* [`3.6.5`, `latest`](https://github.com/jwodder/nethack-docker/blob/master/3.6.5/Dockerfile)
-* [`3.6.5-sysconf`](https://github.com/jwodder/nethack-docker/blob/master/3.6.5-sysconf/Dockerfile)
+* [`3.6.5`, `3.6`, `latest`](https://github.com/jwodder/nethack-docker/blob/master/3.6.5/Dockerfile)
+* [`3.6.5-sysconf`, `3.6-sysconf`, `sysconf`](https://github.com/jwodder/nethack-docker/blob/master/3.6.5-sysconf/Dockerfile)
 * [`3.6.4`](https://github.com/jwodder/nethack-docker/blob/master/3.6.4/Dockerfile)
 * [`3.6.4-sysconf`](https://github.com/jwodder/nethack-docker/blob/master/3.6.4-sysconf/Dockerfile)
 * [`3.6.3`](https://github.com/jwodder/nethack-docker/blob/master/3.6.3/Dockerfile)
@@ -22,24 +22,24 @@ Tags and Dockerfiles
 * [`3.6.1-sysconf`](https://github.com/jwodder/nethack-docker/blob/master/3.6.1-sysconf/Dockerfile)
 * [`3.6.0`](https://github.com/jwodder/nethack-docker/blob/master/3.6.0/Dockerfile)
 * [`3.6.0-sysconf`](https://github.com/jwodder/nethack-docker/blob/master/3.6.0-sysconf/Dockerfile)
-* [`3.4.3`](https://github.com/jwodder/nethack-docker/blob/master/3.4.3/Dockerfile)
+* [`3.4.3`, `3.4`](https://github.com/jwodder/nethack-docker/blob/master/3.4.3/Dockerfile)
 
 Setting Options
 ---------------
 You can set NetHack options by specifying them directly in the environment variable `NETHACKOPTIONS`:
 
-    docker run -it -e NETHACKOPTIONS="name:Rodney,disclose:+i +a +v +g +c +o" jwodder/nethack:3.6.0
+    docker run -it -e NETHACKOPTIONS="name:Rodney,disclose:+i +a +v +g +c +o" jwodder/nethack:3.6
 
 or put the options in a `.nethackrc` file in your `/data` volume and set `NETHACKOPTIONS` to `"@<PATH TO FILE>"`:
 
     echo 'OPTIONS=name:Rodney,disclose:+i +a +v +g +c +o' > /path/to/my/nethack/data/.nethackrc
 
-    docker run -it -v /path/to/my/nethack/data:/data -e NETHACKOPTIONS="@/data/.nethackrc" jwodder/nethack:3.6.0
+    docker run -it -v /path/to/my/nethack/data:/data -e NETHACKOPTIONS="@/data/.nethackrc" jwodder/nethack:3.6
 
 or add the `.nethackrc` directly to root's home directory in a derived image and run that:
 
     # Dockerfile:
-    FROM jwodder/nethack:3.6.0
+    FROM jwodder/nethack:3.6
     RUN echo 'OPTIONS=name:Rodney,disclose:+i +a +v +g +c +o' > /root/.nethackrc
 
     # Command line:
@@ -50,4 +50,4 @@ If using a `3.6.*-sysconf` image, the default option values can be set by placin
 
     echo 'OPTIONS=name:Rodney,disclose:+i +a +v +g +c +o' >> /path/to/my/nethack/data/sysconf
 
-    docker run -it -v /path/to/my/nethack/data:/data jwodder/nethack:3.6.0-sysconf
+    docker run -it -v /path/to/my/nethack/data:/data jwodder/nethack:3.6-sysconf
