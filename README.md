@@ -1,3 +1,5 @@
+[GitHub](https://github.com/jwodder/nethack-docker) | [Docker Hub](https://hub.docker.com/repository/docker/jwodder/nethack)
+
 [NetHack](http://www.nethack.org) is a [roguelike](https://en.wikipedia.org/wiki/Roguelike) computer game in which a brave young `@` goes forth to acquire the Amulet of Yendor and dies horribly every(?) single time.  It also has [a wiki](https://nethackwiki.com).
 
 This repository contains Docker images for the latest versions of the game, built with the basic out-of-the-box configurations (so tty graphics only, no autopickup exceptions in 3.4.3, and no status hilites in 3.6.0), with the following exceptions:
