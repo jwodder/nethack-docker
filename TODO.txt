@@ -1,10 +1,10 @@
 - Add `RUN useradd wizard` to the Dockerfiles and require the user to do
   `docker run -u wizard nethack nethack -D` for wizard mode?  (This might mean
   setting the setuid flag again)
-- Add older versions?
 - Add "onbuild" images that ADD and apply a set of patches?
 - Add "full" images that have all experimental/optional features enabled
   (except non-tty windowing systems?)
-- Figure out how to get the `latest` and `3.6.2` tags to be the exact same image
+- Figure out how to get the `latest` and `3.6.X` tags to be the exact same
+  image
 - Add an image that builds the absolute latest version from the official Git
   repository <git://git.code.sf.net/p/nethack/NetHack> ?
